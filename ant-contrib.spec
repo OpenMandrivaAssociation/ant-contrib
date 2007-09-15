@@ -4,7 +4,7 @@
 Summary:        Collection of tasks for Ant
 Name:           ant-contrib 
 Version:        1.0
-Release:        %mkrel 0.4.%{beta_number}.1
+Release:        %mkrel 0.4.%{beta_number}.2
 License:        Apache License
 URL:            http://ant-contrib.sourceforge.net/
 Group:          Development/Java
@@ -19,8 +19,6 @@ BuildRequires:  xerces-j2
 BuildRequires:  bcel >= 5.0
 %if %{gcj_support}
 BuildRequires:    java-gcj-compat-devel >= 1.0.31
-Requires(post):   java-gcj-compat >= 1.0.31
-Requires(postun): java-gcj-compat >= 1.0.31
 %else
 BuildRequires:  java-devel >= 1.4.2
 Requires:       java >= 1.4.2
