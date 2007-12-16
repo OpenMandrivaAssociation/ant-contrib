@@ -4,14 +4,14 @@
 Summary:        Collection of tasks for Ant
 Name:           ant-contrib 
 Version:        1.0
-Release:        %mkrel 0.4.%{beta_number}.2
+Release:        %mkrel 0.4.%{beta_number}.3
 License:        Apache License
 URL:            http://ant-contrib.sourceforge.net/
 Group:          Development/Java
 Source0:        http://prdownloads.sourceforge.net/ant-contrib/ant-contrib-%{version}%{beta_number}-src.tar.gz
 Patch0:         ant-contrib-build_xml.patch
 Patch2:         ant-contrib-antservertest.patch
-BuildRequires:  jpackage-utils >= 1.5
+BuildRequires:  java-rpmbuild >= 1.5
 BuildRequires:  junit >= 3.8.0
 BuildRequires:  ant-junit >= 1.6.2
 BuildRequires:  ant-nodeps >= 1.6.2
