@@ -26,6 +26,7 @@ Requires:       java >= 1.4.2
 Requires:       junit >= 3.8.0
 Requires:       ant >= 1.6.2
 Requires:       xerces-j2
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 The Ant-Contrib project is a collection of tasks 
