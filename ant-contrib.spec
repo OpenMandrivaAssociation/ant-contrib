@@ -4,7 +4,7 @@
 Summary:        Collection of tasks for Ant
 Name:           ant-contrib 
 Version:        1.0
-Release:        %mkrel 0.4.%{beta_number}.5
+Release:        %mkrel 0.4.%{beta_number}.6
 License:        Apache License
 URL:            http://ant-contrib.sourceforge.net/
 Group:          Development/Java
@@ -52,9 +52,9 @@ sed -i "s/\r//" manual/tasks/foreach.html manual/tasks/for.html
 export JUNIT_VER=`rpm -q --queryformat='%%{version}' junit`
 mkdir -p test/lib
 (cd test/lib
-ln -s $(find-jar junit-$(JUNIT_VER)) junit-$(JUNIT_VER).jar
+ln -s $(find-jar junit-$JUNIT_VER) junit-$JUNIT_VER.jar
 )
-export OPT_JAR_LIST="ant/ant-junit junit ant/ant-nodeps"
+export OPT_JAR_LIST="ant/ant-junit junit ant/ant-nodeps bcel"
 export CLASSPATH=
 CLASSPATH=build/lib/ant-contrib-%{version}.jar:$CLASSPATH
 echo $ANT_HOME
@@ -66,8 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 
 # jars
 install -Dpm 644 build/lib/%{name}.jar \
-      $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
-ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+      $RPM_BUILD_ROOT%{_javadir}/ant/%{name}-%{version}.jar
+ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/ant/%{name}.jar
 
 # javadoc
 install -dm 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
@@ -75,6 +75,9 @@ cp -pr build/docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
 ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} # ghost symlink
 rm -rf build/docs/api
 
+# add ant-contrib to ant.d
+mkdir -p %{buildroot}%{_sysconfdir}/ant.d
+echo "ant/ant-contrib" > %{buildroot}%{_sysconfdir}/ant.d/ant-contrib
 
 %if %{gcj_support}
 %{_bindir}/aot-compile-rpm
@@ -93,7 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(0644,root,root,0755)
-%{_javadir}/*.jar
+%{_javadir}/ant/*.jar
+%config(noreplace) %{_sysconfdir}/ant.d/%{name}
 %if %{gcj_support}
 %dir %{_libdir}/gcj/%{name}
 %attr(-,root,root) %{_libdir}/gcj/%{name}/*
