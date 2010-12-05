@@ -4,7 +4,7 @@
 Summary:        Collection of tasks for Ant
 Name:           ant-contrib 
 Version:        1.0
-Release:        %mkrel 0.4.%{beta_number}.6
+Release:        %mkrel 0.4.%{beta_number}.7
 License:        Apache License
 URL:            http://ant-contrib.sourceforge.net/
 Group:          Development/Java
