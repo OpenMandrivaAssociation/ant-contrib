@@ -3,16 +3,15 @@
 Summary:        Collection of tasks for Ant
 Name:           ant-contrib
 Version:        1.0
-Release:        0.11.%{beta_number}.1
+Release:        0.12.%{beta_number}
 License:        ASL 2.0
 URL:            http://ant-contrib.sourceforge.net/
-Group:          Development/Java 
+Group:          Development/Java
 Source0:        http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}%{beta_number}-src.tar.gz
 Source1:        http://mirrors.ibiblio.org/pub/mirrors/maven2/%{name}/%{name}/1.0b2/%{name}-1.0b2.pom
 Patch0:         ant-contrib-build_xml.patch
 Patch2:         ant-contrib-antservertest.patch
 BuildRequires:  jpackage-utils >= 1.5
-BuildRequires:  java-rpmbuild
 BuildRequires:  junit >= 3.8.0
 BuildRequires:  ant-junit >= 1.6.2
 BuildRequires:  xerces-j2
@@ -31,7 +30,7 @@ for Apache Ant.
 
 %package        javadoc
 Summary:        Javadoc for %{name}
-Group:          Books/Computer books 
+Group:          Development/Java
 
 %description    javadoc
 Api documentation for %{name}.
@@ -40,8 +39,8 @@ Api documentation for %{name}.
 %setup -q  -n %{name}
 rm -rf test/src/net/sf/antcontrib/antclipse
 
-%patch0 -p0
-%patch2 -p0
+%patch0
+%patch2
 sed -i "s/\r//" manual/tasks/foreach.html manual/tasks/for.html
 
 %build
@@ -96,3 +95,4 @@ install -pm 644 %{SOURCE1} $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP-%{name}.pom
 %doc %{_javadocdir}/%{name}
 
 # -----------------------------------------------------------------------------
+
