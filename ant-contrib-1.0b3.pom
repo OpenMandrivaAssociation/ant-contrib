@@ -4,10 +4,12 @@
   <artifactId>ant-contrib</artifactId>
   <packaging>jar</packaging>
   <name>Ant-Contrib Tasks</name>
-  <version>1.0b2</version>
+  <version>1.0b3</version>
   <url>http://ant-contrib.sourceforge.net</url>
   <licenses>
-    <url>http://ant-contrib.sourceforge.net/tasks/LICENSE.txt</url>
+    <license>
+      <url>http://ant-contrib.sourceforge.net/tasks/LICENSE.txt</url>
+    </license>
   </licenses>
   <scm>
     <url>https://svn.sourceforge.net/svnroot/ant-contrib ant-contrib</url>
