@@ -23,6 +23,9 @@ BuildRequires:  xerces-j2
 BuildRequires:  bcel >= 5.0
 BuildRequires:  java-devel >= 1.4.2
 BuildRequires:  apache-ivy
+BuildRequires:	jakarta-commons-httpclient
+BuildRequires:	apache-commons-logging
+BuildRequires:	apache-commons-parent
 Requires:       java >= 1.4.2
 Requires:       junit >= 3.8.0
 Requires:       ant >= 1.6.2
