@@ -4,10 +4,10 @@
 Summary:        Collection of tasks for Ant
 Name:           ant-contrib
 Version:        1.0
-Release:        0.22.%{beta_number}.0%{?dist}
+Release:        0.22.%{beta_number}.0.1
 License:        ASL 2.0 and ASL 1.1
 URL:            http://ant-contrib.sourceforge.net/
-
+Group:		System/Libraries
 Source0:        https://downloads.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-src.tar.bz2
 Source1:        http://mirrors.ibiblio.org/pub/mirrors/maven2/%{name}/%{name}/1.0b3/%{name}-1.0b3.pom
 # ASL 2.0 Licence text
@@ -78,11 +78,9 @@ install -pm 644 %{name}-1.0b3.pom $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP.ant-%{name
 
 %add_maven_depmap JPP.ant-%{name}.pom ant/%{name}.jar
 
-%files
+%files -f .mfiles
 %{_sysconfdir}/ant.d/ant-contrib
 %{_javadir}/ant/*.jar
-%{_mavenpomdir}/*
-%{_mavendepmapfragdir}/*
 %doc target/docs/LICENSE.txt LICENSE-2.0.txt
 %doc target/docs/manual/tasks/*
 
