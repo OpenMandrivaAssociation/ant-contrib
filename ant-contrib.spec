@@ -22,7 +22,7 @@ BuildRequires:  ant-junit >= 1.6.2
 BuildRequires:  xerces-j2
 BuildRequires:  bcel >= 5.0
 BuildRequires:  java-devel >= 1.4.2
-BuildRequires:  apache-ivy
+#BuildRequires:  apache-ivy
 BuildRequires:	jakarta-commons-httpclient
 BuildRequires:	apache-commons-logging
 BuildRequires:	apache-commons-parent
