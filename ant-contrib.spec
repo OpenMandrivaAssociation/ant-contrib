@@ -6,7 +6,7 @@ Name:           ant-contrib
 Version:        1.0
 Release:        0.22.%{beta_number}.0.1
 License:        ASL 2.0 and ASL 1.1
-URL:            http://ant-contrib.sourceforge.net/
+URL:            https://ant-contrib.sourceforge.net/
 Group:		System/Libraries
 Source0:        https://downloads.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-src.tar.bz2
 Source1:        http://mirrors.ibiblio.org/pub/mirrors/maven2/%{name}/%{name}/1.0b3/%{name}-1.0b3.pom
